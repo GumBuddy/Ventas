@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Modelo.DTO.Madera_Bean" table="madera" schema="ventas">
+        <id name="codigo">
+            <column name="codigo" sql-type="int(11)"/>
+        </id>
+        <property name="nombreMadera">
+            <column name="nombre_madera" sql-type="char(10)" length="10"/>
+        </property>
+        <property name="precio">
+            <column name="precio" sql-type="bigint(100)" not-null="true"/>
+        </property>
+        <property name="stock">
+            <column name="Stock" sql-type="bigint(100)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

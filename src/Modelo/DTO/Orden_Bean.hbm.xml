@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Modelo.DTO.Orden_Bean" table="orden" schema="ventas">
+        <id name="idOrden">
+            <column name="id_orden" sql-type="int(11)"/>
+        </id>
+        <many-to-one name="clienteByFkIdCliente" class="Modelo.DTO.Cliente_Bean">
+            <column name="fk_id_cliente"/>
+        </many-to-one>
+        <property name="fecha">
+            <column name="fecha" sql-type="date"/>
+        </property>
+    </class>
+</hibernate-mapping>
