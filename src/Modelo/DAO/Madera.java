@@ -24,11 +24,10 @@ public class Madera {
         throw new HibernateException("Error en al acceder a datos en " + HE);
     }
 
-    public long save(Madera_Bean Madera_Bean) {
-        long id = 0;
+    public void save(Madera_Bean Madera_Bean) {
         try {
             StartOperation();
-            id = (Long) session.save(Madera_Bean);
+            session.save(Madera_Bean);
             transaction.commit();
         } catch (HibernateException HE) {
             MasterOfEX(HE);
@@ -36,7 +35,6 @@ public class Madera {
         } finally {
             session.close();
         }
-        return id;
     }
 
     public void update(Madera_Bean Madera_Bean) throws HibernateException {

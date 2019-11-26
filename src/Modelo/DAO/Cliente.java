@@ -23,7 +23,7 @@ public class Cliente {
         transaction.rollback();
         throw new HibernateException("Error en al acceder a datos en " + HE);
     }
-/*
+
     public void save(Cliente_Bean Cliente_Bean) {
 
         try {
@@ -37,14 +37,7 @@ public class Cliente {
         } finally {
             session.close();
         }
-    }*/
-
-    public void save(Cliente_Bean Cliente_Bean) {
-            StartOperation();
-            session.save(Cliente_Bean);
-            transaction.commit();
-            session.close();
-        }
+    }
 
 
     public void update(Cliente_Bean Cliente_Bean) throws HibernateException {

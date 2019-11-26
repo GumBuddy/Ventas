@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/Cliente")
+@WebServlet("/Cliente" )
 public class Servlet_Clientes extends HttpServlet {
 
     @Override
@@ -24,19 +24,12 @@ public class Servlet_Clientes extends HttpServlet {
         String Country = request.getParameter("Country");
 
         Cliente Access=new Cliente();
-        Cliente_Bean Cliente= new Cliente_Bean(Name,Country);
+        Cliente_Bean Cliente= new Cliente_Bean(0,Name,Country);
         Access.save(Cliente);
-        out.println("EXITO AL GUARDAR");
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Hola</title>");
-        out.println("</head>");
-        out.println("Funciono?");
-        out.println("<body>");
-        out.println("</body>");
-        out.println("</html>");
+        out.println("Se han guardado correctamente lo siguientes datos <br/>");
+        out.println("Nombre : "+Name+ "<br/>"+"Ciudad : "+Country);
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

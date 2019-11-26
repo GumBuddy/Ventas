@@ -14,7 +14,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="56292773-f008-4f37-a6b2-ad6eed56e1ad" />
+          <unit-entry name="Modelo:Hibernate:hibernate.cfg.xml" value="56292773-f008-4f37-a6b2-ad6eed56e1ad" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/Modelo/Hibernate/hibernate.cfg.xml" />
@@ -30,7 +30,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Hibernate 5.4.5-5.4.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.42" level="application_server_libraries" />
-    <orderEntry type="library" name="mysql:mysql-connector-java:8.0.17" level="application" />
     <orderEntry type="library" name="mysql:mysql-connector-java:8.0.15" level="project" />
   </component>
 </module>

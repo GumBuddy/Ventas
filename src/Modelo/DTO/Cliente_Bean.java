@@ -6,11 +6,13 @@ import java.util.Objects;
 @Entity
 @Table(name = "cliente", schema = "ventas", catalog = "ventas")
 public class Cliente_Bean {
+    @GeneratedValue (strategy =GenerationType.AUTO)
     private Integer idCliente;
     private String name;
     private String state;
 
-    public Cliente_Bean(String name, String state) {
+    public Cliente_Bean(Integer idCliente, String name, String state) {
+        this.idCliente=idCliente;
         this.name = name;
         this.state = state;
     }

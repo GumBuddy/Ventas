@@ -6,12 +6,14 @@ import java.util.Objects;
 @Entity
 @Table(name = "madera", schema = "ventas", catalog = "")
 public class Madera_Bean {
+    @GeneratedValue (strategy =GenerationType.AUTO)
     private Integer codigo;
     private String nombreMadera;
     private Long precio;
     private Long stock;
 
-    public Madera_Bean(String nombreMadera, Long precio, Long stock) {
+    public Madera_Bean(int codigo, String nombreMadera, Long precio, Long stock) {
+        this.codigo=codigo;
         this.nombreMadera = nombreMadera;
         this.precio = precio;
         this.stock = stock;
