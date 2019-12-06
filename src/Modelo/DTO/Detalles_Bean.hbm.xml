@@ -8,14 +8,14 @@
         <id name="idOrden">
             <column name="id_orden" sql-type="int(11)"/>
         </id>
+        <property name="total">
+            <column name="total" sql-type="int(11)"/>
+        </property>
         <many-to-one name="ordenByFkIdOrden" class="Modelo.DTO.Orden_Bean">
             <column name="fk_id_orden"/>
         </many-to-one>
         <many-to-one name="maderaByFkCodigo" class="Modelo.DTO.Madera_Bean">
             <column name="fk_codigo"/>
         </many-to-one>
-        <property name="total">
-            <column name="total" sql-type="int(11)"/>
-        </property>
     </class>
 </hibernate-mapping>

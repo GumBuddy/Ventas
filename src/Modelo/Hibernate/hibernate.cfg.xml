@@ -22,7 +22,8 @@
         <mapping resource="Modelo/DTO/Madera_Bean.hbm.xml"/>
         <mapping class="Modelo.DTO.Orden_Bean"/>
         <mapping resource="Modelo/DTO/Orden_Bean.hbm.xml"/>
-
+        <mapping class="Modelo.DTO.Permissions_Bean"/>
+        <mapping resource="Modelo/DTO/Permissions_Bean.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

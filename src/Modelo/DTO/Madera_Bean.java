@@ -11,7 +11,6 @@ public class Madera_Bean {
     private String nombreMadera;
     private Long precio;
     private Long stock;
-
     public Madera_Bean(int codigo, String nombreMadera, Long precio, Long stock) {
         this.codigo=codigo;
         this.nombreMadera = nombreMadera;
@@ -27,6 +26,10 @@ public class Madera_Bean {
     @Column(name = "codigo", nullable = false)
     public Integer getCodigo() {
         return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public void setCodigo(Integer codigo) {

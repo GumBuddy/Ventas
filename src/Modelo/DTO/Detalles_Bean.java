@@ -14,7 +14,6 @@ public class Detalles_Bean {
     public Detalles_Bean(Integer total) {
         this.total = total;
     }
-
     public Detalles_Bean() {
 
     }
@@ -25,6 +24,10 @@ public class Detalles_Bean {
         return idOrden;
     }
 
+    public void setIdOrden(int idOrden) {
+        this.idOrden = idOrden;
+    }
+
     public void setIdOrden(Integer idOrden) {
         this.idOrden = idOrden;
     }
@@ -33,6 +36,10 @@ public class Detalles_Bean {
     @Column(name = "total", nullable = false)
     public Integer getTotal() {
         return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 
     public void setTotal(Integer total) {

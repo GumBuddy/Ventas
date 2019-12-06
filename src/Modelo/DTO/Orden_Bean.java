@@ -10,7 +10,6 @@ public class Orden_Bean {
     private Integer idOrden;
     private Date fecha;
     private Cliente_Bean clienteByFkIdCliente;
-
     public Orden_Bean(Date fecha) {
         this.fecha = fecha;
     }
@@ -23,6 +22,10 @@ public class Orden_Bean {
     @Column(name = "id_orden", nullable = false)
     public Integer getIdOrden() {
         return idOrden;
+    }
+
+    public void setIdOrden(int idOrden) {
+        this.idOrden = idOrden;
     }
 
     public void setIdOrden(Integer idOrden) {

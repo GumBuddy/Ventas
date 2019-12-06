@@ -26,8 +26,21 @@ public class Servlet_Productos extends HttpServlet {
         Madera Access=new Madera();
         Madera_Bean Madera= new Madera_Bean(0,Producto,Precio,Stock);
         Access.save(Madera);
-        out.println("Se han guardado correctamente lo siguientes datos <br/>");
-        out.println("Producto : "+Producto+ "<br/>"+"Precio : "+Precio+ "<br/>"+"Stock : "+Stock);
+
+        out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"vendor/bootstrap/css/bootstrap.min.css\">\n");
+        out.println(" <link rel=stylesheet type=text/css href=css/util.css>");
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/main.css\">\n");
+
+        out.println("<div class=\"limiter\">\n" +
+                "    <div class=\"container-login100\" style=\"background-image: url('images/bg-01.jpg');\">\n" +
+                        "<span class=\"login100-form-title p-b-49\">Datos Salvados Exitosamente </span><br/>\n" +
+                        "<span class=\"login100-form-subtitle\">Redirigiendo...</span>" +
+                "" +
+                "    </div>\n" +
+                "</div>");
+        /*Redireccionador con tiempo de 5 segundos*/
+        out.println("<meta http-equiv=\"refresh\" content=\"5; url=Pedido.jsp\">");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

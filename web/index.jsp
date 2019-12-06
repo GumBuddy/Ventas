@@ -5,103 +5,61 @@
   Time: 03:45 p. m.
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="es">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!--===============================================================================================-->
+    <title>Ventas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="limiter">
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <form class="login100-form validate-form" method="post" action="${pageContext.request.contextPath}/Login">
-					<span class="login100-form-title p-b-49">
-						Login
-					</span>
 
-                <div class="wrap-input100 validate-input m-b-23" data-validate = "Ingresa tu usuario">
-                    <span class="label-input100">Usuario</span>
-                    <input class="input100" type="text" name="usuario" placeholder="Ingresa tu usuario">
-                    <span class="focus-input100" data-symbol="&#xf206;"></span>
-                </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark probootstrap-navabr-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Bienvenido a Ventas.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-nav" aria-controls="probootstrap-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="wrap-input100 validate-input" data-validate="Ingresa tu contraseña">
-                    <span class="label-input100">Contraseña</span>
-                    <input class="input100" type="text" name="contraseña" placeholder="Ingresa tu contraseña">
-                    <span class="focus-input100" data-symbol="&#xf190;"></span>
-                </div>
+        <div class="collapse navbar-collapse" id="probootstrap-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="Ordenes.jsp" class="nav-link">Ordenes</a></li>
+                <li class="nav-item"><a href="Registro.jsp" class="nav-link">Registrar Cliente</a></li>
+                <li class="nav-item probootstrap-cta probootstrap-seperator"></li>
+                <li class="nav-item probootstrap-cta"><a href="Login.jsp" class="nav-link">Iniciar Sesion</a></li>
+            </ul>
 
-                <div class="text-right p-t-8 p-b-31">
-                    <a href="#">
-                        Olvidaste tu contraseña?
-                    </a>
-                </div>
-
-                <div class="container-login100-form-btn">
-                    <div class="wrap-login100-form-btn">
-                        <div class="login100-form-bgbtn"></div>
-                        <button class="login100-form-btn">
-                            Ingresar
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex-col-c p-t-155">
-
-                    <a href="Registro.jsp" class="txt2">
-                        Registrate
-                    </a>
-                </div>
-            </form>
         </div>
     </div>
-</div>
+</nav>
 
 
-<div id="dropDownSelect1"></div>
+<section class="probootstrap-cover">
+    <div class="container">
+        <div class="row probootstrap-vh-100 align-items-center text-center">
+            <div class="col-sm">
+                <div class="probootstrap-text">
+                    <h1 class="probootstrap-heading text-white mb-4">Bienvenido.</h1>
+                    <div class="probootstrap-subheading mb-5">
+                        <p class="h4 font-weight-normal">Crear Nuevo pedido?</p>
+                    </div>
+                    <p><a href="Pedido.jsp" class="btn btn-primary btn-outline-white mb-2">Solicitar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/daterangepicker/moment.min.js"></script>
-<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
+
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
-
 </body>
 </html>

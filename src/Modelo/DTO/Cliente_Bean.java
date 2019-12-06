@@ -4,13 +4,12 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "cliente", schema = "ventas", catalog = "ventas")
+@Table(name = "cliente", schema = "ventas", catalog = "")
 public class Cliente_Bean {
     @GeneratedValue (strategy =GenerationType.AUTO)
     private Integer idCliente;
     private String name;
     private String state;
-
     public Cliente_Bean(Integer idCliente, String name, String state) {
         this.idCliente=idCliente;
         this.name = name;
@@ -25,6 +24,10 @@ public class Cliente_Bean {
     @Column(name = "id_cliente", nullable = false)
     public Integer getIdCliente() {
         return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public void setIdCliente(Integer idCliente) {
