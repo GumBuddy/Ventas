@@ -10,6 +10,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+import Security.Encrypter;
+
 public class Permissions {
 
     private static Session session;
@@ -89,25 +91,6 @@ public class Permissions {
         }
         return listPermissions;
     }
-    static  String convertirSHA256(String password) {
-        MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance("SHA-256");
-        }
-        catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return null;
-        }
-
-        byte[] hash = md.digest(password.getBytes());
-        StringBuffer sb = new StringBuffer();
-
-        for(byte b : hash) {
-            sb.append(String.format("%02x", b));
-        }
-
-        return sb.toString();
-    }
 
     static public int  getAuthUserDTO(String Usuario,String Pass) throws HibernateException {
         int flag=0;
@@ -115,7 +98,7 @@ public class Permissions {
             session = HibernateUtil.getSf().openSession();
             transaction = session.beginTransaction();
             /*encriptamos la contraseña ingresada por el usuario*/
-            String Pass2= convertirSHA256(Pass);
+            String Pass2= Encrypter.convertirSHA256(Pass);
             /*Consultamos al usuario */
             //Permissions_Bean Bean = session.get(Permissions_Bean.class,Usuario);
             Permissions_Bean Bean = (Permissions_Bean) session.createQuery("FROM Permissions_Bean u where u.user= '"+Usuario+"' AND u.password= '"+Pass2+"'").uniqueResult();

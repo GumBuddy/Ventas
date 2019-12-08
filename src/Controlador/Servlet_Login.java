@@ -26,7 +26,7 @@ public class Servlet_Login extends HttpServlet {
         int autentificacion=0;
           autentificacion = Permissions.getAuthUserDTO(usuario,contraseña);
 
-        if(autentificacion==1){
+          if(autentificacion==1){
             out.println("Redirigiendo... <br/>");
             response.sendRedirect("index.jsp");
 

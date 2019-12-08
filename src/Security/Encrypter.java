@@ -1,9 +1,11 @@
+package Security;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
-public class main {
-    static String convertirSHA256(String password){
+public class Encrypter {
+    public static String convertirSHA256(String password){
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("SHA-256");
@@ -22,9 +24,10 @@ public class main {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
+    public static void Encryp(String[] args) {
         String password;
         Scanner sc = new Scanner(System.in);
+        System.out.println("Ingresa el dato a encriptar:  ");
         password= sc.nextLine();
         String PassFinal= convertirSHA256(password);
         System.out.println("Contraseña cifrada --> "+ PassFinal);

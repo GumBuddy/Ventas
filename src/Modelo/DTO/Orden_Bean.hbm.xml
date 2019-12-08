@@ -11,5 +11,8 @@
         <property name="fecha">
             <column name="fecha" sql-type="date"/>
         </property>
+        <many-to-one name="clienteByFkIdCliente" class="Modelo.DTO.Cliente_Bean">
+            <column name="fk_id_cliente"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

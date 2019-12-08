@@ -5,16 +5,14 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "orden", schema = "ventas", catalog = "")
+@Table(name = "orden", schema = "ventas", catalog = "ventas")
 public class Orden_Bean {
+    @GeneratedValue (strategy =GenerationType.AUTO)
     private Integer idOrden;
     private Date fecha;
     private Cliente_Bean clienteByFkIdCliente;
-    public Orden_Bean(Date fecha) {
-        this.fecha = fecha;
-    }
 
-    public Orden_Bean() {
+       public Orden_Bean() {
 
     }
 
