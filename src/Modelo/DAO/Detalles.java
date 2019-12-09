@@ -76,11 +76,11 @@ public class Detalles {
         return Detalles_Bean;
     }
 
-    public List<Detalles_Bean> getListDetalles() throws HibernateException {
+    public List<Detalles_Bean> getListDetalles(int ID) throws HibernateException {
         List<Detalles_Bean> listDetalles = null;
         try {
             StartOperation();
-            listDetalles = session.createQuery("FROM Detalles_Bean ").list();
+            listDetalles = session.createQuery("FROM Detalles_Bean u where u.ordenByFkIdOrden.id='"+ID+"'").list();
         } finally {
             session.close();
         }

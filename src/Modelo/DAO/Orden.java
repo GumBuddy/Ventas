@@ -65,11 +65,12 @@ public class Orden {
         }
     }
 
-    public Orden_Bean getOrdenDTO(long idAutorDTO) throws HibernateException {
+    public Orden_Bean getOrdenDTO(int idAutorDTO) throws HibernateException {
         Orden_Bean Orden_Bean = null;
         try {
             StartOperation();
             Orden_Bean = session.get(Orden_Bean.class, idAutorDTO);
+
         } finally {
             session.close();
         }
@@ -89,25 +90,10 @@ public class Orden {
 
     public List getListOrden()
     {
-        //List<Orden_Bean> lista = null;
 
             StartOperation();
             List<Orden_Bean> lista= session.createQuery("From Orden_Bean ").list();
-            /*Iterator<Orden_Bean> iterator=lista.iterator();
-            transaction.commit();
-           // int i=0;
-            while(iterator.hasNext())
-            {
-                Orden_Bean producto= iterator.next();
-                List<Orden_Bean> Lista_Productos = lista;
-                Lista_Productos.add(producto);
-                String Producto = String.valueOf(lista.toString());
-              /*  String Producto =
-                        Lista_Productos.get(i).getIdOrden()+" "+
-                        Lista_Productos.get(i).getClienteByFkIdCliente()+" "+
-                        Lista_Productos.get(i).getFecha();
-                i++;*/
-              //  return Producto;
+
         return lista;
             }
 

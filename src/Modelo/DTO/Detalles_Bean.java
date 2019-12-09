@@ -6,14 +6,12 @@ import java.util.Objects;
 @Entity
 @Table(name = "detalles", schema = "ventas", catalog = "")
 public class Detalles_Bean {
+    @GeneratedValue (strategy =GenerationType.AUTO)
     private Integer idOrden;
     private Integer total;
     private Orden_Bean ordenByFkIdOrden;
     private Madera_Bean maderaByFkCodigo;
 
-    public Detalles_Bean(Integer total) {
-        this.total = total;
-    }
     public Detalles_Bean() {
 
     }

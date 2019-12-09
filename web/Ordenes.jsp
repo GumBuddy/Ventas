@@ -8,7 +8,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%  List <Orden_Bean> lista = (List) request.getAttribute("lista");%>
 <html>
 <head>
     <title>Ordenes</title>

@@ -22,15 +22,16 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark probootstrap-navabr-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Bienvenido a Ventas.com</a>
+        <a class="navbar-brand" href="index.jsp">EL PADRINO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-nav" aria-controls="probootstrap-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="probootstrap-nav">
+
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="Ordenes.jsp" class="nav-link">Ordenes</a></li>
-                <li class="nav-item"><a href="Registro.jsp" class="nav-link">Registrar Cliente</a></li>
+
+               <li class="nav-item"><a href="Registro.jsp" class="nav-link">Registrar Cliente</a></li>
                 <li class="nav-item probootstrap-cta probootstrap-seperator"></li>
                 <li class="nav-item probootstrap-cta"><a href="Login.jsp" class="nav-link">Iniciar Sesion</a></li>
             </ul>
@@ -50,6 +51,10 @@
                         <p class="h4 font-weight-normal">Crear Nuevo pedido?</p>
                     </div>
                     <p><a href="Pedido.jsp" class="btn btn-primary btn-outline-white mb-2">Solicitar</a></p>
+                    <div class="probootstrap-subheading mb-5">
+                        <p class="h4 font-weight-normal">Ver las actuales ordenes?</p>
+                    </div>
+                    <p><form method="post" action="${pageContext.request.contextPath}/Ordenes"><button  class="btn btn-primary btn-outline-white mb-2">Ordenes</button></form></p>
                 </div>
             </div>
         </div>
