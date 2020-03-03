@@ -53,13 +53,13 @@
 
                 <div class="wrap-input100 validate-input" data-validate="Ingresa tu contraseña">
                     <span class="label-input100">Contraseña</span>
-                    <input class="input100" type="text" name="contraseña" placeholder="Ingresa tu contraseña">
+                    <input class="input100" type="password" name="contraseña" placeholder="Ingresa tu contraseña">
                     <span class="focus-input100" data-symbol="&#xf190;"></span>
                 </div>
 
                 <div class="text-right p-t-8 p-b-31">
-                    <a href="#">
-                        Olvidaste tu contraseña?
+                    <a href="index.jsp">
+                        Regresar
                     </a>
                 </div>
 

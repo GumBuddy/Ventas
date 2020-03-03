@@ -179,6 +179,22 @@ iframe {
   background-position: center;
   background-size: cover;
 }
+.container1-login100 {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: inline-grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .wrap-login100 {
   width: 500px;
@@ -521,8 +537,17 @@ iframe {
   background-color: rgba(255,255,255,0.2);
 }
 
+.align-left {
+  text-align: left;
+}
 
+.align-center {
+  text-align: center;
+}
 
+.align-right {
+  text-align: right;
+}
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
 
@@ -531,4 +556,5 @@ iframe {
     padding-left: 15px;
     padding-right: 15px;
   }
-} 
+}
+

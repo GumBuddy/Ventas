@@ -16,6 +16,12 @@ public class Detalles_Bean {
 
     }
 
+    public Detalles_Bean(Integer total, Orden_Bean ordenByFkIdOrden, Madera_Bean maderaByFkCodigo) {
+        this.total = total;
+        this.ordenByFkIdOrden = ordenByFkIdOrden;
+        this.maderaByFkCodigo = maderaByFkCodigo;
+    }
+
     @Id
     @Column(name = "id_orden", nullable = false)
     public Integer getIdOrden() {

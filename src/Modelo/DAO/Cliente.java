@@ -66,7 +66,7 @@ public class Cliente {
         }
     }
 
-    public Cliente_Bean getClienteDTO(long idAutorDTO) throws HibernateException {
+    public Cliente_Bean getClienteDTO(int idAutorDTO) throws HibernateException {
         Cliente_Bean Cliente_Bean = null;
         try {
             StartOperation();
@@ -87,4 +87,6 @@ public class Cliente {
         }
         return listCliente;
     }
+
+
 }

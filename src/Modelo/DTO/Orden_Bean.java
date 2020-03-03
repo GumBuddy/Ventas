@@ -22,6 +22,11 @@ public class Orden_Bean {
         return idOrden;
     }
 
+    public Orden_Bean(Date fecha, Cliente_Bean clienteByFkIdCliente) {
+        this.fecha = fecha;
+        this.clienteByFkIdCliente = clienteByFkIdCliente;
+    }
+
     public void setIdOrden(int idOrden) {
         this.idOrden = idOrden;
     }

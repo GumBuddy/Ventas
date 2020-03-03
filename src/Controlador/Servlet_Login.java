@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.NoSuchAlgorithmException;
@@ -17,6 +18,8 @@ import java.security.NoSuchAlgorithmException;
 public class Servlet_Login extends HttpServlet {
 
       protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+          HttpSession session = request.getSession();
+
         PrintWriter out = response.getWriter();
 
         response.setContentType("text/html;charset=UTF-8");
@@ -27,12 +30,23 @@ public class Servlet_Login extends HttpServlet {
           autentificacion = Permissions.getAuthUserDTO(usuario,contraseña);
 
           if(autentificacion==1){
-            out.println("Redirigiendo... <br/>");
-            response.sendRedirect("index.jsp");
+            session.setAttribute("usuario", usuario);
 
+              out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+              out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"vendor/bootstrap/css/bootstrap.min.css\">\n");
+              out.println(" <link rel=stylesheet type=text/css href=css/util.css>");
+              out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/main.css\">\n");
+              out.println("<div class=\"limiter\">\n" +
+                      "    <div class=\"container-login100\" style=\"background-image: url('images/bg-01.jpg');\">\n" +
+                      "<span class=\"login100-form-title p-b-49\">Bienvenido</span>\n" +
+                      "    </div>\n" +
+                      "</div>");
+              out.println("<meta http-equiv=\"refresh\" content=\"3; url=index.jsp\">");
+              //request.getRequestDispatcher("index.jsp").forward(request, response);
         }
         else
             {
+
                 out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
                 out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"vendor/bootstrap/css/bootstrap.min.css\">\n");
                 out.println(" <link rel=stylesheet type=text/css href=css/util.css>");
@@ -46,7 +60,8 @@ public class Servlet_Login extends HttpServlet {
                         "    </div>\n" +
                         "</div>");
                 /*Redireccionador con tiempo de 5 segundos*/
-                out.println("<meta http-equiv=\"refresh\" content=\"5; url=index.jsp\">");
+                session.invalidate();
+                out.println("<meta http-equiv=\"refresh\" content=\"3; url=index.jsp\">");
 
             }
 

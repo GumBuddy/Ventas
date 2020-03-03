@@ -6,6 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %><!DOCTYPE html>
+<%  String usuario= (String) request.getSession().getAttribute("usuario");
+    String Sesion="Iniciar Sesion";
+    String Pagina="Login.jsp";
+String Saludo="Inicia Sesion para continuar";
+String Mostrar="none";
+String Pagina2=Pagina;
+%>
+
+
 <html lang="en">
 <head>
     <title>Ventas</title>
@@ -19,7 +28,15 @@
 </head>
 <body>
 
-
+<%
+if(usuario!=null)
+{Sesion="Usuario: "+usuario;
+Pagina="confirmacion.jsp";
+Pagina2="index.jsp";
+Saludo="Bienvenido";
+Mostrar="inline-block";
+}
+%>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark probootstrap-navabr-dark">
     <div class="container">
         <a class="navbar-brand" href="index.jsp">EL PADRINO</a>
@@ -31,9 +48,11 @@
 
             <ul class="navbar-nav ml-auto">
 
-               <li class="nav-item"><a href="Registro.jsp" class="nav-link">Registrar Cliente</a></li>
+                <li style="display:<%=Mostrar%>" class="nav-item"><a href="Registro.jsp" class="nav-link">Registrar Cliente</a></li>
+                <li style="display:<%=Mostrar%>" class="nav-item"><a href="Productos.jsp" class="nav-link">Registrar Producto</a></li>
                 <li class="nav-item probootstrap-cta probootstrap-seperator"></li>
-                <li class="nav-item probootstrap-cta"><a href="Login.jsp" class="nav-link">Iniciar Sesion</a></li>
+                <li class="nav-item probootstrap-cta"><a href=<%=Pagina2%> class="nav-link"><%=Sesion%></a></li>
+                <li style="display:<%=Mostrar%>" class="nav-item probootstrap-cta"><a href=<%=Pagina%> class="nav-link">Cerrar Sesion</a></li>
             </ul>
 
         </div>
@@ -46,15 +65,15 @@
         <div class="row probootstrap-vh-100 align-items-center text-center">
             <div class="col-sm">
                 <div class="probootstrap-text">
-                    <h1 class="probootstrap-heading text-white mb-4">Bienvenido.</h1>
+                    <h1 class="probootstrap-heading text-white mb-4"><%=Saludo%></h1>
                     <div class="probootstrap-subheading mb-5">
-                        <p class="h4 font-weight-normal">Crear Nuevo pedido?</p>
+                        <p style="display:<%=Mostrar%>" class="h4 font-weight-normal">Crear Nuevo pedido?</p>
                     </div>
-                    <p><a href="Pedido.jsp" class="btn btn-primary btn-outline-white mb-2">Solicitar</a></p>
+                    <p><a href="Pedido.jsp" style="display:<%=Mostrar%>" class="btn btn-primary btn-outline-white mb-2">Solicitar</a></p>
                     <div class="probootstrap-subheading mb-5">
-                        <p class="h4 font-weight-normal">Ver las actuales ordenes?</p>
+                        <p style="display:<%=Mostrar%>" class="h4 font-weight-normal">Ver las actuales ordenes?</p>
                     </div>
-                    <p><form method="post" action="${pageContext.request.contextPath}/Ordenes"><button  class="btn btn-primary btn-outline-white mb-2">Ordenes</button></form></p>
+                    <p><form method="post" action="${pageContext.request.contextPath}/Ordenes"><button style="display:<%=Mostrar%>" class="btn btn-primary btn-outline-white mb-2">Ordenes</button></form></p>
                 </div>
             </div>
         </div>
